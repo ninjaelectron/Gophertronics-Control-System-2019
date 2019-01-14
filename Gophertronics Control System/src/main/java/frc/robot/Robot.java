@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Drivetrain;
 
 // Victor SPX stuff
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -32,11 +33,6 @@ import frc.robot.RobotMap;
  */
 public class Robot extends TimedRobot {
 
-  WPI_VictorSPX leftBackSPX = new WPI_VictorSPX(RobotMap.LEFT_BACK_ID);
-  WPI_VictorSPX leftFrontSPX = new WPI_VictorSPX(RobotMap.LEFT_FRONT_ID);
-  WPI_VictorSPX rightBackSPX = new WPI_VictorSPX(RobotMap.RIGHT_BACK_ID);
-  WPI_VictorSPX rightFrontSPX = new WPI_VictorSPX(RobotMap.RIGHT_FRONT_ID);
-
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
@@ -49,17 +45,20 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+
+    // Declare Drivetrain
+    Drivetrain m_drivetrain = new Drivetrain();
+
+    // Operator Input stuff.
     m_oi = new OI();
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
 
 
-    // Victor init code
-    leftBackSPX.set(ControlMode.PercentOutput, 0);
-    leftFrontSPX.set(ControlMode.PercentOutput, 0);
-    rightBackSPX.set(ControlMode.PercentOutput, 0);
-    rightFrontSPX.set(ControlMode.PercentOutput, 0);
+
+
+
   }
 
   /**
