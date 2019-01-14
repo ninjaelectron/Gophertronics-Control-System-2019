@@ -8,8 +8,12 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -17,15 +21,33 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Drivetrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  
+  // Motor Controllers.
+  WPI_VictorSPX leftFrontSPX = null;
+  WPI_VictorSPX leftBackSPX = null;
+  WPI_VictorSPX rightFrontSPX = null;
+  WPI_VictorSPX rightBackSPX = null;
 
-  VictorSPX leftFrontSPX = null;
-  VictorSPX leftBackSPX = null;
-  VictorSPX rightFrontSPX = null;
-  VictorSPX rightBackSPX = null;
+  // Groupings for Motors.
+  SpeedControllerGroup leftDriveGroup = null;
+  SpeedControllerGroup rightDriveGroup = null;
+
+  // The Whole DriveTrain.
+  DifferentialDrive drivePlatform = null;
 
   public Drivetrain() {
     // create motor objects.
+
+    leftFrontSPX = new WPI_VictorSPX(RobotMap.LEFT_FRONT_ID);
+    leftBackSPX = new WPI_VictorSPX(RobotMap.LEFT_BACK_ID);
+    leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);
+
+    rightFrontSPX = new WPI_VictorSPX(RobotMap.RIGHT_FRONT_ID);
+    rightBackSPX = new WPI_VictorSPX(RobotMap.RIGHT_BACK_ID);
+    rightDriveGroup = new SpeedControllerGroup(rightFrontSPX, rightBackSPX);
     
+    drivePlatform = new DifferentialDrive(rightDriveGroup, leftDriveGroup);
+
   }
 
   @Override
