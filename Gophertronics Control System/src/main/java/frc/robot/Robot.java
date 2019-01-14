@@ -15,6 +15,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 
+// Victor SPX stuff
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -23,6 +27,12 @@ import frc.robot.subsystems.ExampleSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  VictorSPX leftBackSPX = new VictorSPX(0);
+  VictorSPX leftFrontSPX = new VictorSPX(1);
+  VictorSPX rightBackSPX = new VictorSPX(2);
+  VictorSPX rightFrontSPX = new VictorSPX(3);
+
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
@@ -39,6 +49,13 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+
+
+    // Victor init code
+    leftBackSPX.set(ControlMode.PercentOutput, 0);
+    leftFrontSPX.set(ControlMode.PercentOutput, 0);
+    rightBackSPX.set(ControlMode.PercentOutput, 0);
+    rightFrontSPX.set(ControlMode.PercentOutput, 0);
   }
 
   /**
