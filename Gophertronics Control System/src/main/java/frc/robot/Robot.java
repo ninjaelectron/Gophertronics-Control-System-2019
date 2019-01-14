@@ -18,6 +18,10 @@ import frc.robot.subsystems.ExampleSubsystem;
 // Victor SPX stuff
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
+// Pre-declared port id's.
+import frc.robot.RobotMap;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,10 +32,10 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
  */
 public class Robot extends TimedRobot {
 
-  VictorSPX leftBackSPX = new VictorSPX(0);
-  VictorSPX leftFrontSPX = new VictorSPX(1);
-  VictorSPX rightBackSPX = new VictorSPX(2);
-  VictorSPX rightFrontSPX = new VictorSPX(3);
+  WPI_VictorSPX leftBackSPX = new WPI_VictorSPX(RobotMap.LEFT_BACK_ID);
+  WPI_VictorSPX leftFrontSPX = new WPI_VictorSPX(RobotMap.LEFT_FRONT_ID);
+  WPI_VictorSPX rightBackSPX = new WPI_VictorSPX(RobotMap.RIGHT_BACK_ID);
+  WPI_VictorSPX rightFrontSPX = new WPI_VictorSPX(RobotMap.RIGHT_FRONT_ID);
 
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
