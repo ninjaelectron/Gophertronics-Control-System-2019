@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -30,6 +31,8 @@ public class Robot extends TimedRobot {
 
   public static Drivetrain m_drivetrain = null;
 
+  public static CameraServer cameraOne = null;
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -49,10 +52,9 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
 
-
-
-
-
+    // Create Camera Server to serve video to control station.
+    cameraOne = CameraServer.getInstance();
+    cameraOne.startAutomaticCapture();
   }
 
   /**
