@@ -38,12 +38,12 @@ public class Drivetrain extends Subsystem {
   public Drivetrain() {
     // create motor objects.
 
-    leftFrontSPX = new WPI_VictorSPX(RobotMap.LEFT_FRONT_ID);
-    leftBackSPX = new WPI_VictorSPX(RobotMap.LEFT_BACK_ID);
+    leftFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_ID);
+    leftBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_BACK_ID);
     leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);
 
-    rightFrontSPX = new WPI_VictorSPX(RobotMap.RIGHT_FRONT_ID);
-    rightBackSPX = new WPI_VictorSPX(RobotMap.RIGHT_BACK_ID);
+    rightFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_FRONT_ID);
+    rightBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_BACK_ID);
     rightDriveGroup = new SpeedControllerGroup(rightFrontSPX, rightBackSPX);
     
     drivePlatform = new DifferentialDrive(rightDriveGroup, leftDriveGroup);
