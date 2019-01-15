@@ -55,4 +55,8 @@ public class Drivetrain extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+
+  public void arcadeDrive(double moveSpeed, double rotateSpeed) {
+    drivePlatform.arcadeDrive(moveSpeed*0.5,rotateSpeed*0.5);
+  }
 }

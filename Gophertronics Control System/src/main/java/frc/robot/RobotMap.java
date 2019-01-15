@@ -30,4 +30,6 @@ public class RobotMap {
   
   public static int DRIVETRAIN_RIGHT_FRONT_ID = 20;
   public static int DRIVETRAIN_RIGHT_BACK_ID = 21;
+
+  public static int OI_DRIVERSTATION_CONTROLLER = 0;
 }
