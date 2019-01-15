@@ -36,6 +36,8 @@ public class Robot extends TimedRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
+  public static Drivetrain m_drivetrain = null;
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -47,7 +49,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
 
     // Declare Drivetrain
-    Drivetrain m_drivetrain = new Drivetrain();
+    m_drivetrain = new Drivetrain();
 
     // Operator Input stuff.
     m_oi = new OI();
