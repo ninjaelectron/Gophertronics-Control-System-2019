@@ -31,5 +31,9 @@ public class RobotMap {
   public static int DRIVETRAIN_RIGHT_FRONT_ID = 20;
   public static int DRIVETRAIN_RIGHT_BACK_ID = 21;
 
+  // Definitions for Driver Station-related stuff.
   public static int OI_DRIVERSTATION_CONTROLLER = 0;
+
+  public static int OI_MOVE_AXIS = 1;
+  public static int OI_ROTATE_AXIS = 0;
 }

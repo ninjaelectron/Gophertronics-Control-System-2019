@@ -25,6 +25,11 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    // Declare and manipulate variables for movement / turning speed.
+    double moveSpeed = -Robot.m_oi.driverController.getRawAxis(1);
+    double rotateSpeed = Robot.m_oi.driverController.getRawAxis(0);
+
+    Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -36,11 +41,13 @@ public class DriveArcade extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_drivetrain.arcadeDrive(0, 0); // Stop the robot once joystick is within deadzone.
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end(); // go to end() if interrupted by another command.
   }
 }
