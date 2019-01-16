@@ -59,6 +59,6 @@ public class Drivetrain extends Subsystem {
   }
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
-    drivePlatform.arcadeDrive(moveSpeed*0.5,rotateSpeed*0.5);
+    drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
   }
 }
