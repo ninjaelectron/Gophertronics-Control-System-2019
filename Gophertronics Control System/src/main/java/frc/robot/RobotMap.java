@@ -24,16 +24,18 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
+  // Drivetrain modifier. Change number to allow for speed-limiting.
+  public static final double DRIVETRAIN_SPEED_MODIFIER = 0.5;
+
   // Motor definitions.
   public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
   public static int DRIVETRAIN_LEFT_BACK_ID = 11;
-  
   public static int DRIVETRAIN_RIGHT_FRONT_ID = 20;
   public static int DRIVETRAIN_RIGHT_BACK_ID = 21;
 
   // Definitions for Driver Station-related stuff.
   public static int OI_DRIVERSTATION_CONTROLLER = 0;
-
+  // Joystick axes.
   public static int OI_MOVE_AXIS = 1;
   public static int OI_ROTATE_AXIS = 0;
 }
