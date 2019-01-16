@@ -37,8 +37,8 @@ public class Drivetrain extends Subsystem {
   DifferentialDrive drivePlatform = null;
 
   public Drivetrain() {
-    // create motor objects.
 
+    // create motor objects. Each MOtor is grouped into a "Drive Group" that is then placed into a "Drive Platform".    
     leftFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_ID);
     leftBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_BACK_ID);
     leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);
