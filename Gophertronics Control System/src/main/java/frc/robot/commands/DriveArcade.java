@@ -29,7 +29,7 @@ public class DriveArcade extends Command {
     double moveSpeed = -Robot.m_oi.driverController.getRawAxis(1);
     double rotateSpeed = Robot.m_oi.driverController.getRawAxis(0);
 
-    Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    Robot.m_drivetrain.arcadeDrive(-moveSpeed, rotateSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
