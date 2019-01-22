@@ -26,6 +26,7 @@ public class RobotMap {
 
   // Drivetrain modifier. Change number to allow for speed-limiting.
   public static final double DRIVETRAIN_SPEED_MODIFIER = 0.5;
+  public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.0;
 
   // Motor definitions.
   public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
