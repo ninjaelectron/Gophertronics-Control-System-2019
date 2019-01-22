@@ -36,6 +36,10 @@ public class Drivetrain extends Subsystem {
   // The Whole DriveTrain.
   DifferentialDrive drivePlatform = null;
 
+  /* Sets whether or not arcadeDrive() utilises DRIVETRAIN_SPEED_MODIFIER 
+     or DRIVETRAIN_SPEEDBOOST_MODIFIER for motor speed. */
+  public boolean isSpeedboost;
+
   public Drivetrain() {
 
     // create motor objects. Each MOtor is grouped into a "Drive Group" that is then placed into a "Drive Platform".    
@@ -49,6 +53,8 @@ public class Drivetrain extends Subsystem {
     
     drivePlatform = new DifferentialDrive(rightDriveGroup, leftDriveGroup);
 
+    isSpeedboost = false; // False unless speedboost button is depressed.
+
   }
 
   @Override
@@ -58,7 +64,23 @@ public class Drivetrain extends Subsystem {
     setDefaultCommand(new DriveArcade());
   }
 
+  // Sets speed of motor controllers.
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
-    drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
+    if (this.getSpeedboost() == true) { // Checks if the speedboost trigger is enabled.
+      drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
+    }
+    else {
+      drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER);
+    }
   }
+
+  public void setSpeedboost(boolean set) {
+    this.isSpeedboost = set;
+  }
+
+  public boolean getSpeedboost() {
+    return this.isSpeedboost;
+  }
+
+
 }
