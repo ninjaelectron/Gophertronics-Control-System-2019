@@ -38,7 +38,7 @@ public class Drivetrain extends Subsystem {
 
   /* Sets whether or not arcadeDrive() utilises DRIVETRAIN_SPEED_MODIFIER 
      or DRIVETRAIN_SPEEDBOOST_MODIFIER for motor speed. */
-  public boolean isSpeedboost;
+  private boolean isSpeedboost;
 
   public Drivetrain() {
 
