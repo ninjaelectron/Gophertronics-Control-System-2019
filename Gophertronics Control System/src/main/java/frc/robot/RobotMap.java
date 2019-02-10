@@ -45,4 +45,7 @@ public class RobotMap {
 
   // Elevator definitions.
   public static int ELEVATOR_MAIN_ID = 30;
+
+  // Arm definitions.
+  public static int ARM_MAIN_ID = 40;
 }
