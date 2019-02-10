@@ -9,15 +9,13 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class Elevate extends Command {
-  public Elevate() {
+public class Armavate extends Command {
+  public Armavate() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
 
-    requires(Robot.m_elevator);
-
+    requires(Robot.m_arm);
   }
 
   // Called just before this Command runs the first time
@@ -28,9 +26,10 @@ public class Elevate extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // Grab the two axes for triggers, and combine them.
-    double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORUP_AXIS - RobotMap.OI_ELEVATORDOWN_AXIS);
-    Robot.m_elevator.move(elevationSpeed * 0.5);
+
+    double moveSpeed = Robot.m_oi.driverController.getRawAxis(5);
+
+    Robot.m_arm.move(moveSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -42,13 +41,11 @@ public class Elevate extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_elevator.move(0); // Stop Moving
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }

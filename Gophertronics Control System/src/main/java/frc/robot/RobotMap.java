@@ -43,6 +43,8 @@ public class RobotMap {
   public static int OI_ELEVATORUP_AXIS = 3;
   public static int OI_ELEVATORDOWN_AXIS = 2;
 
+  public static int OI_ARM_AXIS = 5;
+
   // Elevator definitions.
   public static int ELEVATOR_MAIN_ID = 30;
 
