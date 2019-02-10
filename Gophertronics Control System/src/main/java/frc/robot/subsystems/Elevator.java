@@ -6,12 +6,9 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
-
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
 import frc.robot.RobotMap;
 
 /**
@@ -33,5 +30,11 @@ public class Elevator extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+  }
+
+  public void move(double moveSpeed) {
+
+    elevatorSPX.set(ControlMode.PercentOutput, moveSpeed);
+
   }
 }
