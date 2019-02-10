@@ -39,4 +39,7 @@ public class RobotMap {
   // Joystick axes.
   public static int OI_MOVE_AXIS = 1;
   public static int OI_ROTATE_AXIS = 0;
+
+  // Elevator definitions.
+  public static int ELEVATOR_MAIN_ID = 30;
 }
