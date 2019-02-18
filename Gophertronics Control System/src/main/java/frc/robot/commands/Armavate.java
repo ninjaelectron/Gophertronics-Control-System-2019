@@ -29,7 +29,7 @@ public class Armavate extends Command {
 
     double moveSpeed = Robot.m_oi.driverController.getRawAxis(5);
 
-    Robot.m_arm.move(moveSpeed);
+    Robot.m_arm.move(moveSpeed * -1); // Reverse controls
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -47,5 +47,6 @@ public class Armavate extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    this.end();
   }
 }

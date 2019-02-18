@@ -45,6 +45,6 @@ public class Speedboost extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
+    this.end();
   }
 }

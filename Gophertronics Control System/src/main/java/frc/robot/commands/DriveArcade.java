@@ -49,6 +49,6 @@ public class DriveArcade extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end(); // go to end() if interrupted by another command.
+    this.end(); // go to end() if interrupted by another command.
   }
 }

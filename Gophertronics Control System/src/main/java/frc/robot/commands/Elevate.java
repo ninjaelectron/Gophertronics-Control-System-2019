@@ -29,8 +29,8 @@ public class Elevate extends Command {
   @Override
   protected void execute() {
     // Grab the two axes for triggers, and combine them.
-    double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORUP_AXIS - RobotMap.OI_ELEVATORDOWN_AXIS);
-    Robot.m_elevator.move(elevationSpeed * 0.5);
+    double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORUP_AXIS) - Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORDOWN_AXIS);
+    Robot.m_elevator.move(elevationSpeed);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -42,13 +42,13 @@ public class Elevate extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_elevator.move(0); // Stop Moving
+    Robot.m_elevator.move(0); // Stop moving.
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
+    this.end();
   }
 }

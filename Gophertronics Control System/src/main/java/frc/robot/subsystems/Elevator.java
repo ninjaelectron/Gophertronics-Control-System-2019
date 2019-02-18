@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import frc.robot.RobotMap;
 
+import frc.robot.commands.*;
 /**
  * Add your docs here.
  */
@@ -22,7 +23,7 @@ public class Elevator extends Subsystem {
 
   public Elevator() {
 
-    elevatorSPX = new WPI_VictorSPX(RobotMap.ELEVATOR_MAIN_ID);
+    this.elevatorSPX = new WPI_VictorSPX(RobotMap.ELEVATOR_MAIN_ID);
 
   }
 
@@ -30,11 +31,13 @@ public class Elevator extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+
+    setDefaultCommand(new Elevate());
   }
 
   public void move(double moveSpeed) {
 
-    elevatorSPX.set(ControlMode.PercentOutput, moveSpeed);
+    this.elevatorSPX.set(ControlMode.PercentOutput, moveSpeed);
 
   }
 }

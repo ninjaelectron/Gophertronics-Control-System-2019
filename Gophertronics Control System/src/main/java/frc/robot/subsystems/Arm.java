@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import frc.robot.RobotMap;
+
+import frc.robot.commands.*;
 /**
  * Add your docs here.
  */
@@ -25,13 +27,14 @@ public class Arm extends Subsystem {
   WPI_VictorSPX ArmSPX = null;
 
   public Arm() {
-    ArmSPX = new WPI_VictorSPX(RobotMap.ARM_MAIN_ID); // Device ID 40.
+    this.ArmSPX = new WPI_VictorSPX(RobotMap.ARM_MAIN_ID); // Device ID 40.
   }
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new Armavate());
   }
 
   public void move(double moveSpeed) {

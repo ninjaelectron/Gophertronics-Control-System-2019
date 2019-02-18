@@ -43,17 +43,17 @@ public class Drivetrain extends Subsystem {
   public Drivetrain() {
 
     // create motor objects. Each MOtor is grouped into a "Drive Group" that is then placed into a "Drive Platform".    
-    leftFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_ID);
-    leftBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_BACK_ID);
-    leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);
+    this.leftFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_ID);
+    this.leftBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_BACK_ID);
+    this.leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);
 
-    rightFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_FRONT_ID);
-    rightBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_BACK_ID);
-    rightDriveGroup = new SpeedControllerGroup(rightFrontSPX, rightBackSPX);
+    this.rightFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_FRONT_ID);
+    this.rightBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_RIGHT_BACK_ID);
+    this.rightDriveGroup = new SpeedControllerGroup(rightFrontSPX, rightBackSPX);
     
-    drivePlatform = new DifferentialDrive(rightDriveGroup, leftDriveGroup);
+    this.drivePlatform = new DifferentialDrive(rightDriveGroup, leftDriveGroup);
 
-    isSpeedboost = false; // False unless speedboost button is depressed.
+    this.isSpeedboost = false; // False unless speedboost button is depressed.
 
   }
 
@@ -67,10 +67,10 @@ public class Drivetrain extends Subsystem {
   // Sets speed of motor controllers.
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
     if (this.getSpeedboost() == true) { // Checks if the speedboost trigger is enabled.
-      drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
+      this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
     }
     else {
-      drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER);
+      this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER);
     }
   }
 
