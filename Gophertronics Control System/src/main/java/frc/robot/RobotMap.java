@@ -50,4 +50,12 @@ public class RobotMap {
 
   // Arm definitions.
   public static int ARM_MAIN_ID = 40;
+
+
+  // Limit switch definitions.
+  public static int DIO_ARM_LOWLIMIT_CHANNEL = 1;
+  public static int DIO_ARM_HIGHLIMIT_CHANNEL = 2;
+  
+  public static int DIO_ELEVATOR_LOWLIMIT_CHANNEL = 3;
+  public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 4;
 }

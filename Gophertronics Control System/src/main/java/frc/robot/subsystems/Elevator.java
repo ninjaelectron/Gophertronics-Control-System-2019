@@ -10,8 +10,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import frc.robot.RobotMap;
-
 import frc.robot.commands.*;
+import edu.wpi.first.wpilibj.DigitalInput;
 /**
  * Add your docs here.
  */
@@ -20,10 +20,14 @@ public class Elevator extends Subsystem {
   // here. Call these from Commands.
 
   WPI_VictorSPX elevatorSPX = null;
+  DigitalInput ElevatorLowerLimit = null;
+  DigitalInput ElevatorUpperLimit = null;
 
   public Elevator() {
 
     this.elevatorSPX = new WPI_VictorSPX(RobotMap.ELEVATOR_MAIN_ID);
+    this.ElevatorLowerLimit = new DigitalInput(RobotMap.DIO_ELEVATOR_LOWLIMIT_CHANNEL);
+    this.ElevatorUpperLimit = new DigitalInput(RobotMap.DIO_ELEVATOR_HIGHLIMIT_CHANNEL);
 
   }
 
