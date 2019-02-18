@@ -19,7 +19,7 @@ public class Speedboost extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    System.out.println("Speeding...");
+    System.out.println("Speeding");
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -38,7 +38,7 @@ public class Speedboost extends Command {
   @Override
   protected void end() {
     Robot.m_drivetrain.setSpeedboost(false);
-    System.out.println("Not Speeding...");
+    System.out.println("Not Speeding");
   }
 
   // Called when another command which requires one or more of the same
