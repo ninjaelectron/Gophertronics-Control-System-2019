@@ -40,9 +40,9 @@ public class Elevator extends Subsystem {
   }
 
   public void move(double moveSpeed) {
-    if (this.ElevatorLowerLimit.get()) {
+    if (!this.ElevatorLowerLimit.get()) {
       moveSpeed = Math.max(moveSpeed, 0); // Only output positive (up movement).
-    } else if (this.ElevatorUpperLimit.get()) {
+    } else if (!this.ElevatorUpperLimit.get()) {
       moveSpeed = Math.min(moveSpeed, 0); // Only output negative (down movement).
     }
 
