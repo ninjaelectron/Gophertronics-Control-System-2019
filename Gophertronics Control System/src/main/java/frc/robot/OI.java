@@ -10,9 +10,9 @@ package frc.robot;
 import frc.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Joystick;
-
-
-
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.*;
+import frc.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -49,7 +49,13 @@ public class OI {
 
   public Joystick driverController = new Joystick(RobotMap.OI_DRIVERSTATION_CONTROLLER);
 
-  
+  public Button aButton = new JoystickButton(driverController, RobotMap.OI_HARVESTER_POS_BUTTON);
+  public Button bButton = new JoystickButton(driverController, RobotMap.OI_HARVESTER_NEG_BUTTON);
+  public Button xButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
 
+  public OI() {
+    aButton.whileHeld(new Harvest(false));
+    bButton.whileHeld(new Harvest(true));
+  }
 
 }

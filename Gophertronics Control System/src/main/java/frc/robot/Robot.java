@@ -29,6 +29,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static Elevator m_elevator;
   public static Arm m_arm;
+  public static Harvester m_harvester;
 
   public static Drivetrain m_drivetrain = null;
 
@@ -50,6 +51,8 @@ public class Robot extends TimedRobot {
     m_elevator = new Elevator();
     // Declare Arm
     m_arm = new Arm();
+    // Declare Harvester
+    m_harvester = new Harvester();
 
     // Operator Input stuff.
     m_oi = new OI();

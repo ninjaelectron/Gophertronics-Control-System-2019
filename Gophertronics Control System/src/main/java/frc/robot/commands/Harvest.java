@@ -5,18 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class DriveArcade extends Command {
-  public DriveArcade() {
+public class Harvest extends Command {
+
+  private Boolean isReversed;
+
+  public Harvest(boolean reverse) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.m_drivetrain);
+    requires(Robot.m_harvester);
+
+    this.setReversed(reverse);
+
   }
 
   // Called just before this Command runs the first time
@@ -27,11 +31,9 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    // Declare and manipulate variables for movement / turning speed.
-    double moveSpeed = -Robot.m_oi.driverController.getRawAxis(RobotMap.OI_MOVE_AXIS);
-    double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ROTATE_AXIS);
 
-    Robot.m_drivetrain.arcadeDrive(-moveSpeed, rotateSpeed);
+    Robot.m_harvester.move(this.getReversed());
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -43,13 +45,20 @@ public class DriveArcade extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_drivetrain.arcadeDrive(0, 0); // Stop the robot once joystick is within deadzone.
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    this.end(); // go to end() if interrupted by another command.
+    end();
+  }
+
+  void setReversed(boolean reverse) {
+    this.isReversed = reverse;
+  }
+
+  boolean getReversed() {
+    return this.isReversed;
   }
 }

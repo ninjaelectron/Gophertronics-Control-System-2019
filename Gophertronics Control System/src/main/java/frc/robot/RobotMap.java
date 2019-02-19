@@ -45,11 +45,19 @@ public class RobotMap {
 
   public static int OI_ARM_AXIS = 5;
 
+  public static int OI_SPEEDBOOST_BUTTON = 3;
+  public static int OI_HARVESTER_POS_BUTTON = 1;
+  public static int OI_HARVESTER_NEG_BUTTON = 2;
+
   // Elevator definitions.
   public static int ELEVATOR_MAIN_ID = 30;
 
   // Arm definitions.
   public static int ARM_MAIN_ID = 40;
+
+  // Harvester definitions.
+  public static int HARVESTER_LEFT_ID = 50;
+  public static int HARVESTER_RIGHT_ID = 51;
 
 
   // Limit switch definitions.
