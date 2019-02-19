@@ -41,8 +41,10 @@ public class Arm extends Subsystem {
 
   public void move(double moveSpeed) {
     if (this.ArmLowerLimit.get()) {
+      System.out.println("ArmLower:" + this.ArmLowerLimit.get());
       moveSpeed = Math.max(moveSpeed, 0); // Only output positive (up movement).
     } else if (this.ArmUpperLimit.get()) {
+      System.out.println("ArmUpper:" + this.ArmUpperLimit.get());
       moveSpeed = Math.min(moveSpeed, 0); // Only output negative (down movement).
     }
     

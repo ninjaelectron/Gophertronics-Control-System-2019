@@ -53,9 +53,9 @@ public class RobotMap {
 
 
   // Limit switch definitions.
-  public static int DIO_ARM_LOWLIMIT_CHANNEL = 1;
-  public static int DIO_ARM_HIGHLIMIT_CHANNEL = 2;
+  public static int DIO_ARM_LOWLIMIT_CHANNEL = 0;
+  public static int DIO_ARM_HIGHLIMIT_CHANNEL = 1;
   
-  public static int DIO_ELEVATOR_LOWLIMIT_CHANNEL = 3;
-  public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 4;
+  public static int DIO_ELEVATOR_LOWLIMIT_CHANNEL = 2;
+  public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 3;
 }
