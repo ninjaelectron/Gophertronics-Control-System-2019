@@ -29,7 +29,7 @@ public class Elevate extends Command {
   @Override
   protected void execute() {
     // Grab the two axes for triggers, and combine them.
-    double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORUP_AXIS) - Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORDOWN_AXIS);
+    double elevationSpeed = (Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORUP_AXIS) - Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ELEVATORDOWN_AXIS)) * RobotMap.SUBSYSTEMS_GLOBAL_SPEED_MODIFIER;
     Robot.m_elevator.move(elevationSpeed);
   }
 

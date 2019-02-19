@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class Armavate extends Command {
   public Armavate() {
@@ -27,7 +28,7 @@ public class Armavate extends Command {
   @Override
   protected void execute() {
 
-    double moveSpeed = Robot.m_oi.driverController.getRawAxis(5);
+    double moveSpeed = Robot.m_oi.driverController.getRawAxis(5) * RobotMap.SUBSYSTEMS_GLOBAL_SPEED_MODIFIER;
 
     Robot.m_arm.move(moveSpeed * -1); // Reverse controls
   }

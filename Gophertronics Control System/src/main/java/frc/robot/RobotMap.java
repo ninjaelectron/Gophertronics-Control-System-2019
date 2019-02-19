@@ -66,4 +66,7 @@ public class RobotMap {
   
   public static int DIO_ELEVATOR_LOWLIMIT_CHANNEL = 2;
   public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 3;
+
+  // Global speed modifier.
+  public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.5;
 }

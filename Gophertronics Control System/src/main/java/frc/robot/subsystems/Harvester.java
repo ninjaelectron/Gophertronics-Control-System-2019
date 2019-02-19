@@ -47,4 +47,9 @@ public class Harvester extends Subsystem {
       HarvesterRight.set(ControlMode.PercentOutput, -0.5);
     }
   }
+
+  public void stopMove() { // Kill motors.
+    HarvesterLeft.set(ControlMode.PercentOutput, 0);
+    HarvesterRight.set(ControlMode.PercentOutput, 0);
+  }
 }
