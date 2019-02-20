@@ -12,9 +12,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import frc.robot.RobotMap;
-import frc.robot.OI;
-
-
 
 /**
  * Add your docs here.
