@@ -38,13 +38,13 @@ public class Harvester extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void move(boolean reversed) {
+  public void move(boolean reversed, double speed) {
     if (!reversed) {
-      HarvesterLeft.set(ControlMode.PercentOutput, 0.5); // Magic number for speed limiting. Ideally 1.
-      HarvesterRight.set(ControlMode.PercentOutput, 0.5);
+      HarvesterLeft.set(ControlMode.PercentOutput, speed); // Magic number for speed limiting. Ideally 1.
+      HarvesterRight.set(ControlMode.PercentOutput, speed);
     } else {
-      HarvesterLeft.set(ControlMode.PercentOutput, -0.5);
-      HarvesterRight.set(ControlMode.PercentOutput, -0.5);
+      HarvesterLeft.set(ControlMode.PercentOutput, -1 * speed);
+      HarvesterRight.set(ControlMode.PercentOutput, -1 * speed);
     }
   }
 

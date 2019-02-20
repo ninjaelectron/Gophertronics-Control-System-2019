@@ -37,17 +37,20 @@ public class RobotMap {
   // Definitions for Driver Station-related stuff.
   public static int OI_DRIVERSTATION_CONTROLLER = 0;
   // Joystick axes.
-  public static int OI_MOVE_AXIS = 1;
-  public static int OI_ROTATE_AXIS = 0;
+  public static int OI_MOVE_AXIS = 1; // LS
+  public static int OI_ROTATE_AXIS = 0; // LS
 
-  public static int OI_ELEVATORUP_AXIS = 3;
-  public static int OI_ELEVATORDOWN_AXIS = 2;
+  public static int OI_ELEVATORUP_AXIS = 3; // RT
+  public static int OI_ELEVATORDOWN_AXIS = 2; // LT
 
-  public static int OI_ARM_AXIS = 5;
+  public static int OI_ARM_AXIS = 5; // RS
 
-  public static int OI_SPEEDBOOST_BUTTON = 3;
-  public static int OI_HARVESTER_POS_BUTTON = 1;
-  public static int OI_HARVESTER_NEG_BUTTON = 2;
+  public static int OI_SPEEDBOOST_BUTTON = 5; // RB
+
+  public static int OI_HARVESTER_POS_BUTTON = 1; // A
+  public static int OI_HARVESTER_NEG_BUTTON = 2; // B
+  public static int OI_HARVESTER_HATCH_POS_BUTTON = 3; // X
+  public static int OI_HARVESTER_HATCH_NEG_BUTTON = 4; // Y
 
   // Elevator definitions.
   public static int ELEVATOR_MAIN_ID = 30;

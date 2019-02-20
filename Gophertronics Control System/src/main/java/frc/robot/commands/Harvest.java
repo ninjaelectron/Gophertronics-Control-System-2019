@@ -13,13 +13,15 @@ import frc.robot.Robot;
 public class Harvest extends Command {
 
   private Boolean isReversed;
+  private double speed;
 
-  public Harvest(boolean reverse) {
+  public Harvest(boolean reverse, double newSpeed) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_harvester);
 
     this.setReversed(reverse);
+    this.setSpeed(newSpeed);
 
   }
 
@@ -32,7 +34,7 @@ public class Harvest extends Command {
   @Override
   protected void execute() {
 
-    Robot.m_harvester.move(this.getReversed());
+    Robot.m_harvester.move(this.getReversed(), this.getSpeed());
 
   }
 
@@ -61,5 +63,13 @@ public class Harvest extends Command {
 
   boolean getReversed() {
     return this.isReversed;
+  }
+
+  void setSpeed(double newSpeed) {
+    this.speed = newSpeed;
+  }
+
+  double getSpeed() {
+    return this.speed;
   }
 }
