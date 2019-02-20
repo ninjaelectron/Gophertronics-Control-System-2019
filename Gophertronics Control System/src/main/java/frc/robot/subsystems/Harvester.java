@@ -40,7 +40,7 @@ public class Harvester extends Subsystem {
 
   public void move(boolean reversed, double speed) {
     if (!reversed) {
-      HarvesterLeft.set(ControlMode.PercentOutput, speed); // Magic number for speed limiting. Ideally 1.
+      HarvesterLeft.set(ControlMode.PercentOutput, speed);
       HarvesterRight.set(ControlMode.PercentOutput, speed);
     } else {
       HarvesterLeft.set(ControlMode.PercentOutput, -1 * speed);

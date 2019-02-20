@@ -33,7 +33,7 @@ public class Harvest extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
+    System.out.println(speed);
     Robot.m_harvester.move(this.getReversed(), this.getSpeed());
 
   }

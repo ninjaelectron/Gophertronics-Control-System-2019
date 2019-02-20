@@ -25,8 +25,8 @@ public class RobotMap {
   // public static int rangefinderModule = 1;
 
   // Drivetrain modifier. Change number to allow for speed-limiting.
-  public static final double DRIVETRAIN_SPEED_MODIFIER = 0.5;
-  public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.0;
+  public static final double DRIVETRAIN_SPEED_MODIFIER = 0.3;
+  public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 0.75;
 
   // Motor definitions.
   public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
@@ -71,5 +71,5 @@ public class RobotMap {
   public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 3;
 
   // Global speed modifier.
-  public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.5;
+  public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 1;
 }

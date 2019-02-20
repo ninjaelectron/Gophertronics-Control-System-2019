@@ -81,6 +81,4 @@ public class Drivetrain extends Subsystem {
   public boolean getSpeedboost() {
     return this.isSpeedboost;
   }
-
-
 }
