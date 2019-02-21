@@ -59,8 +59,8 @@ public class RobotMap {
   public static int ARM_MAIN_ID = 40;
 
   // Harvester definitions.
-  public static int HARVESTER_LEFT_ID = 50;
-  public static int HARVESTER_RIGHT_ID = 51;
+  public static int HARVESTER_LEFT_ID = 43;
+  public static int HARVESTER_RIGHT_ID = 44;
 
 
   // Limit switch definitions.

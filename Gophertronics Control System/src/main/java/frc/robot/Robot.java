@@ -104,6 +104,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
+
+    teleopInit(); // Cancel auto mode (I hope)
+
     m_autonomousCommand = m_chooser.getSelected();
 
     /*
