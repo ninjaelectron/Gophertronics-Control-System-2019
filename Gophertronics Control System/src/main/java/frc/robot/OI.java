@@ -53,6 +53,7 @@ public class OI {
   public Button bButton = new JoystickButton(driverController, RobotMap.OI_HARVESTER_NEG_BUTTON);
   public Button xButton = new JoystickButton(driverController, RobotMap.OI_HARVESTER_HATCH_POS_BUTTON);
   public Button yButton = new JoystickButton(driverController, RobotMap.OI_HARVESTER_HATCH_NEG_BUTTON);
+  public Button lbButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
 
   public OI() {
     aButton.whileHeld(new Harvest(false, 1.0));
@@ -60,6 +61,8 @@ public class OI {
 
     xButton.whileHeld(new Harvest(true, 0.5));
     yButton.whileHeld(new Harvest(false, 0.5));
+
+    lbButton.whileHeld(new Speedboost());
   }
 
 }
