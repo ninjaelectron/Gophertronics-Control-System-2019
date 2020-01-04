@@ -28,7 +28,7 @@ public class Armavate extends Command {
   @Override
   protected void execute() {
 
-    double moveSpeed = Robot.m_oi.driverController.getRawAxis(5) * RobotMap.SUBSYSTEMS_GLOBAL_SPEED_MODIFIER;
+    double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ARM_AXIS) * RobotMap.SUBSYSTEMS_GLOBAL_SPEED_MODIFIER;
 
     Robot.m_arm.move(moveSpeed * -1); // Reverse controls
   }
