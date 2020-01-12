@@ -40,35 +40,7 @@ public class RobotMap {
   public static int OI_MOVE_AXIS = 1; // LS
   public static int OI_ROTATE_AXIS = 0; // LS
 
-  public static int OI_ELEVATORUP_AXIS = 3; // RT
-  public static int OI_ELEVATORDOWN_AXIS = 2; // LT
-
-  public static int OI_ARM_AXIS = 5; // RS
-
   public static int OI_SPEEDBOOST_BUTTON = 5; // RB
-
-  public static int OI_HARVESTER_POS_BUTTON = 1; // A
-  public static int OI_HARVESTER_NEG_BUTTON = 2; // B
-  public static int OI_HARVESTER_HATCH_POS_BUTTON = 3; // X
-  public static int OI_HARVESTER_HATCH_NEG_BUTTON = 4; // Y
-
-  // Elevator definitions.
-  public static int ELEVATOR_MAIN_ID = 30;
-
-  // Arm definitions.
-  public static int ARM_MAIN_ID = 40;
-
-  // Harvester definitions.
-  public static int HARVESTER_LEFT_ID = 43;
-  public static int HARVESTER_RIGHT_ID = 44;
-
-
-  // Limit switch definitions.
-  public static int DIO_ARM_LOWLIMIT_CHANNEL = 0;
-  public static int DIO_ARM_HIGHLIMIT_CHANNEL = 1;
-  
-  public static int DIO_ELEVATOR_LOWLIMIT_CHANNEL = 2;
-  public static int DIO_ELEVATOR_HIGHLIMIT_CHANNEL = 3;
 
   // Global speed modifier.
   public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
